@@ -9,7 +9,6 @@ let extraHeight = window.scrollY + document.querySelector('#myBoard').getBoundin
 let extraWidht = window.scrollX + document.querySelector('#myBoard').getBoundingClientRect().left
 
 window.addEventListener('keyup',(ev)=>{
-    console.log("pressed...",ev.keyCode);
     if(ev.keyCode===40 && arrow_top <=360){
         arrow_top+=10;
         arrowRef.style=`top:${arrow_top}px`
@@ -22,8 +21,6 @@ window.addEventListener('keyup',(ev)=>{
    
        let interval= setInterval(()=>{
             arrow_left+=10;
-            
-            //checkIfCollide(arrow_left+100,arrow_top+5)
 
             if(arrow_left >=500|| checkIfCollide(arrow_left+100,arrow_top+5)) {
                 clearInterval(interval)
